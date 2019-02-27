@@ -20,7 +20,7 @@ import LoginForm from './src/login';
 
 
                     
-                          <View style={{marginTop:280}}>
+                          <View style={{marginTop:279}}>
                                    <Text style={{color:'gray',textAlign:'center',fontSize:15}}>Don't have an account? </Text> 
                           
                                    <Button
