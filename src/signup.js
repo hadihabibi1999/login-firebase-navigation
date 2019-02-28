@@ -2,6 +2,7 @@ import React, { Component } from "react";
  import { TouchableOpacity,Text,ImageBackground , View, Button, TextInput, KeyboardAvoidingView ,StatusBar,StyleSheet} from "react-native";
  import fire from "./firebase";
 
+
 export default class Signup extends Component {
     constructor(){
         super();
@@ -29,8 +30,12 @@ export default class Signup extends Component {
 
 render() {
     return (
+        <View style={{flex:1,backgroundColor:"#DADDE6"}}>
+         <StatusBar
+            barStyle="light-content"
+        />
         <KeyboardAvoidingView behavior="padding" enabled>
-    
+          
         <View behavior='padding' style={{ flex: 1, flexDirection: "column",padding:20}}>
         <StatusBar
             barStyle="light-content"
@@ -72,9 +77,11 @@ render() {
                     <Text style={{textAlign:'center',color:'steelblue',fontSize:25}}>Sign Up</Text>
                 </TouchableOpacity>
             </View>
+
         </View>
-       
+        
        </KeyboardAvoidingView>
+       </View>
     );
   }
 }
