@@ -30,7 +30,7 @@ render() {
                 style={styles.input1}
                 placeholder="username"
                 underlineColorAndroid="transparent"
-                placeholderTextColor='white'
+                placeholderTextColor='#ED0D66'
                 returnKeyType='next'
                 onSubmitEditing={()=>this.passwordTextInput.focus()}
                 keyboardType="email-address"
@@ -47,7 +47,7 @@ render() {
                 placeholder="Password"
                 secureTextEntry={true}
                 underlineColorAndroid="transparent"
-                placeholderTextColor='white'
+                placeholderTextColor='#ED0D66'
                 returnKeyType='go'
                 ref={(input)=>this.passwordTextInput=input}
                 value={this.state.password}
@@ -67,11 +67,11 @@ render() {
 const styles = StyleSheet.create({
    input1:{
        height: 45,
-       borderColor: "#02C4F8",
+       borderColor: "#D11A63",
        borderWidth: 0.5,
        paddingHorizontal:10,
        borderRadius:30,
-       backgroundColor:"#81E1FA"
+       backgroundColor:"#FCF6F9"
    },
     input2:{
         height: 45,
@@ -79,6 +79,6 @@ const styles = StyleSheet.create({
         borderWidth: 0.5,
         paddingHorizontal:10,
         borderRadius:30,
-        backgroundColor:"#F4B356"
+        backgroundColor:"#FCF6F9"
     }
 })
