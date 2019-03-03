@@ -13,20 +13,22 @@ export default class Signup extends Component {
     }
 
     createUser(){
-      console.log("salam,",this.state)
-       fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then(()=>console.log("user Signed in")).catch(function(error) {
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          console.log(error.message,"error")
+         console.log("done,",this.state)
+         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then(()=>console.log("user Signed in")).catch(function(error) {
+         var errorCode = error.code;
+         var errorMessage = error.message;
+         console.log(error.message,"error")
         });
   }
-    navigation(){
-      this.props.navigation.navigate('Login')
+
+     navigation(){
+       this.props.navigation.navigate('Login')
+ }
+     createdUser(){
+       this.createUser()
+       this.navigation()
   }
-  loginbutton(){
-      this.createUser()
-      this.navigation()
-  }
+
 
 render() {
     return (
@@ -73,7 +75,7 @@ render() {
                  </View>
 
             <View style={{ height: 100, marginTop: 200 }}>
-                <TouchableOpacity onPress={()=>this.loginbutton()}>
+                <TouchableOpacity onPress={()=>this.createdUser()}>
                     <Text style={{textAlign:'center',color:'steelblue',fontSize:25}}>Sign Up</Text>
                 </TouchableOpacity>
             </View>

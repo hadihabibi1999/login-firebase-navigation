@@ -1,9 +1,9 @@
 import React from 'react';
 import { createAppContainer, createStackNavigator } from 'react-navigation';
 import {StyleSheet,Button, View, Text ,Image,ImageBackground,KeyboardAvoidingView} from 'react-native';
-import { Container, Row, Col } from 'reactstrap';
 import Signup from './src/signup';
 import LoginForm from './src/login';
+import Home from './src/home';
 
  class Login extends React.Component {
   static navigationOptions = {
@@ -51,6 +51,9 @@ const RootStack = createStackNavigator(
     Signup: {
       screen: Signup,
     },
+    Home:{
+      screen: Home,
+    }
   },
   {
     initialRouteName: 'Login',

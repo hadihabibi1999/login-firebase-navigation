@@ -10,16 +10,25 @@ export default class LoginForm extends Component {
             password:""
         }
     }
-    createdUser(){
-        console.log("salam,",this.state)
+    loginUser(){
+          console.log(this.state)
            fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).catch(function(error) {
             var errorCode = error.code;
             var errorMessage = error.message;
             console.log(error.message,"error")
           });
         }
-        
+    navigation(){
+        this.props.navigation.navigate('Home')
+    }
+
+    arrivaledUser(){
+        this.loginUser()
+        this.navigation()
+    }
+
 render() {
+   
     return (
         <View behavior='padding' style={{ flex: 1, flexDirection: "column", margin: 10 }}>
         <StatusBar
@@ -56,7 +65,7 @@ render() {
                  </View>
 
             <View style={{ height: 100, marginTop: 90 }}>
-                <TouchableOpacity onPress={()=>this.createdUser()}>
+                <TouchableOpacity onPress={()=>this.arrivaledUser()}>
                     <Text style={{textAlign:'center',color:'steelblue',fontSize:25}}>Log In</Text>
                 </TouchableOpacity>
             </View>
