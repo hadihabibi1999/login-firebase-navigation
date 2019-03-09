@@ -12,19 +12,21 @@ export default class LoginForm extends Component {
     }
     loginUser(){
           console.log(this.state)
-           fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).catch(function(error) {
+          fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).catch(function(error) {
+            // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
-            console.log(error.message,"error")
+            // ...
           });
         }
-    navigation(){
+
+    goesToHome = () => {
         this.props.navigation.navigate('Home')
     }
-
-    arrivaledUser(){
+    
+    arrivaledUser = () => {
         this.loginUser()
-        this.navigation()
+        this.goesToHome()
     }
 
 render() {
@@ -65,7 +67,7 @@ render() {
                  </View>
 
             <View style={{ height: 100, marginTop: 90 }}>
-                <TouchableOpacity onPress={()=>this.arrivaledUser()}>
+                <TouchableOpacity onPress={()=>this.loginUser()}>
                     <Text style={{textAlign:'center',color:'steelblue',fontSize:25}}>Log In</Text>
                 </TouchableOpacity>
             </View>

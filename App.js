@@ -9,6 +9,18 @@ import Home from './src/home';
   static navigationOptions = {
     header: null,
     };
+
+
+
+    facebook(){
+      var provider = new firebase.auth.FacebookAuthProvider();
+      provider.addScope('user_birthday');
+      firebase.auth().languageCode = 'fr_FR';
+      provider.setCustomParameters({
+        'display': 'popup'
+      });
+    }
+   
   render() {
     return (
           <KeyboardAvoidingView behavior="padding" enabled>
@@ -34,9 +46,7 @@ import Home from './src/home';
                                          type='clear'
                                          onPress={() => this.props.navigation.navigate('Signup')}
                                    />
-                          
                           </View>
-                     
                </ImageBackground>
            </KeyboardAvoidingView>
     );

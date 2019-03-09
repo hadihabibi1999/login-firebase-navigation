@@ -14,19 +14,21 @@ export default class Signup extends Component {
 
     createUser(){
          console.log("done,",this.state)
-         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then(()=>console.log("user Signed in")).catch(function(error) {
-         var errorCode = error.code;
-         var errorMessage = error.message;
-         console.log(error.message,"error")
-        });
+         fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // ...
+          });
+          
   }
 
-     navigation(){
+     goesToLogin(){
        this.props.navigation.navigate('Login')
  }
      createdUser(){
        this.createUser()
-       this.navigation()
+       this.goesToLogin()
   }
 
 
