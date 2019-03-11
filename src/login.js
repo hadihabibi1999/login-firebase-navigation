@@ -1,6 +1,7 @@
 import React, { Component } from "react";
- import { TouchableOpacity,Text, View, Button, TextInput, KeyboardAvoidingView ,StatusBar,StyleSheet} from "react-native";
+ import { TouchableOpacity,Text, View, TextInput, KeyboardAvoidingView ,StatusBar,StyleSheet} from "react-native";
  import fire from "./firebase";
+ 
 
 export default class LoginForm extends Component {
     constructor(){
@@ -10,27 +11,29 @@ export default class LoginForm extends Component {
             password:""
         }
     }
-    loginUser(){
-          console.log(this.state)
-          fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).catch(function(error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // ...
-          });
-        }
-
-    goesToHome = () => {
-        this.props.navigation.navigate('Home')
-    }
     
-    arrivaledUser = () => {
-        this.loginUser()
-        this.goesToHome()
-    }
+    loginUser(){
+        console.log(this.state)
+        fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // ...
+        });
+      }
+
+     goesToHome(){
+          this.props.navigation.navigate('Home')
+      }
+
+
+      arrivalledUser(){
+          this.loginUser()
+          this.goesToHome()
+      }
+
 
 render() {
-   
     return (
         <View behavior='padding' style={{ flex: 1, flexDirection: "column", margin: 10 }}>
         <StatusBar
@@ -52,7 +55,7 @@ render() {
             />
       
      
-            <View style={{ paddingTop:35}}>
+            <View style={{ paddingTop:33}}>
             <TextInput
                 style={styles.input2}
                 placeholder="Password"
@@ -67,7 +70,7 @@ render() {
                  </View>
 
             <View style={{ height: 100, marginTop: 90 }}>
-                <TouchableOpacity onPress={()=>this.loginUser()}>
+                <TouchableOpacity onPress={()=>this.arrivalledUser()}>
                     <Text style={{textAlign:'center',color:'steelblue',fontSize:25}}>Log In</Text>
                 </TouchableOpacity>
             </View>

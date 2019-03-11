@@ -24,8 +24,8 @@ export default class Signup extends Component {
   }
 
      goesToLogin(){
-       this.props.navigation.navigate('Login')
- }
+        this.props.navigation.navigate('Login')
+}
      createdUser(){
        this.createUser()
        this.goesToLogin()
@@ -33,6 +33,7 @@ export default class Signup extends Component {
 
 
 render() {
+  
     return (
         <View style={{flex:1,backgroundColor:"#DADDE6"}}>
          <StatusBar

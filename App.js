@@ -32,14 +32,14 @@ import Home from './src/home';
                       />
                       </View>
 
-                        <View style={{marginTop:80}}>
+                        <View style={{marginTop:100}}>
                            <LoginForm/>
                         </View>
 
 
                     
-                          <View style={{marginTop:300}}>
-                                   <Text style={{color:'#F50665',textAlign:'center',fontSize:15}}>Don't have an account? </Text> 
+                          <View style={{marginTop:400}}>
+                                   <Text style={{color:'#922B21',textAlign:'center',fontSize:15}}>Don't have an account? </Text> 
                           
                                    <Button
                                          title="Sign Up"
