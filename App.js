@@ -1,26 +1,18 @@
 import React from 'react';
 import { createAppContainer, createStackNavigator } from 'react-navigation';
-import {StyleSheet,Button, View, Text ,Image,ImageBackground,KeyboardAvoidingView} from 'react-native';
+import {StyleSheet,Button, View, Text ,Image,ImageBackground,TouchableOpacity,KeyboardAvoidingView} from 'react-native';
 import Signup from './src/signup';
 import LoginForm from './src/login';
 import Home from './src/home';
+
 
  class Login extends React.Component {
   static navigationOptions = {
     header: null,
     };
 
+  
 
-
-    facebook(){
-      var provider = new firebase.auth.FacebookAuthProvider();
-      provider.addScope('user_birthday');
-      firebase.auth().languageCode = 'fr_FR';
-      provider.setCustomParameters({
-        'display': 'popup'
-      });
-    }
-   
   render() {
     return (
           <KeyboardAvoidingView behavior="padding" enabled>
@@ -32,11 +24,12 @@ import Home from './src/home';
                       />
                       </View>
 
-                        <View style={{marginTop:100}}>
-                           <LoginForm/>
+                        <View style={{marginTop:110}}>
+                           <LoginForm
+                           navigate={this.props.navigation}
+                           />
                         </View>
-
-
+   
                     
                           <View style={{marginTop:400}}>
                                    <Text style={{color:'#922B21',textAlign:'center',fontSize:15}}>Don't have an account? </Text> 

@@ -1,15 +1,16 @@
 import React, { Component } from "react";
- import { TouchableOpacity,Text, View, TextInput, KeyboardAvoidingView ,StatusBar,StyleSheet} from "react-native";
- import fire from "./firebase";
+import { TouchableOpacity,Text, Button,View, TextInput, KeyboardAvoidingView ,StatusBar,StyleSheet} from "react-native";
+import fire from "./firebase";
  
 
 export default class LoginForm extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state={
             email:"",
             password:""
         }
+        this.goesToHome=this.goesToHome.bind(this)
     }
     
     loginUser(){
@@ -21,25 +22,26 @@ export default class LoginForm extends Component {
           // ...
         });
       }
-
+  
      goesToHome(){
-          this.props.navigation.navigate('Home')
+        {this.props.navigate.navigate('Home')}
       }
-
-
+  
+  
       arrivalledUser(){
           this.loginUser()
           this.goesToHome()
       }
 
-
+      
 render() {
+  
     return (
         <View behavior='padding' style={{ flex: 1, flexDirection: "column", margin: 10 }}>
         <StatusBar
             barStyle="light-content"
         />
-       
+         
             <TextInput
                 style={styles.input1}
                 placeholder="username"
@@ -55,7 +57,7 @@ render() {
             />
       
      
-            <View style={{ paddingTop:33}}>
+           <View style={{ paddingTop:33}}>
             <TextInput
                 style={styles.input2}
                 placeholder="Password"
@@ -69,12 +71,13 @@ render() {
             />
                  </View>
 
-            <View style={{ height: 100, marginTop: 90 }}>
-                <TouchableOpacity onPress={()=>this.arrivalledUser()}>
-                    <Text style={{textAlign:'center',color:'steelblue',fontSize:25}}>Log In</Text>
+                 <TouchableOpacity style={{ height: 100, marginTop: 90 }}
+                      onPress={()=>this.arrivalledUser()}>
+                      <Text style={{textAlign:'center',color:'steelblue',fontSize:25}}>Log In</Text>
                 </TouchableOpacity>
-            </View>
+     
         </View>
+      
     );
   }
 }
