@@ -4,16 +4,17 @@ import React, { Component } from "react";
 
 
 export default class Signup extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state={
             email:"",
             password:""
         }
     }
+    
 
     createUser(){
-         console.log("done,",this.state)
+         console.log("done",this.state)
          fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).catch(function(error) {
             // Handle Errors here.
             var errorCode = error.code;

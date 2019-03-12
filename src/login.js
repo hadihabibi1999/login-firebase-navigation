@@ -10,32 +10,31 @@ export default class LoginForm extends Component {
             email:"",
             password:""
         }
-        this.goesToHome=this.goesToHome.bind(this)
     }
-    
+
     loginUser(){
         console.log(this.state)
         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).catch(function(error) {
           // Handle Errors here.
           var errorCode = error.code;
           var errorMessage = error.message;
+        })
           // ...
-        });
-      }
+    }
   
      goesToHome(){
         {this.props.navigate.navigate('Home')}
       }
   
-  
+   
       arrivalledUser(){
-          this.loginUser()
+          //this.loginUser()
           this.goesToHome()
       }
 
       
 render() {
-  
+   
     return (
         <View behavior='padding' style={{ flex: 1, flexDirection: "column", margin: 10 }}>
         <StatusBar
@@ -99,3 +98,4 @@ const styles = StyleSheet.create({
         backgroundColor:"#FCF6F9"
     }
 })
+

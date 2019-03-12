@@ -25,7 +25,7 @@ import Home from './src/home';
                       </View>
 
                         <View style={{marginTop:110}}>
-                           <LoginForm
+                            <LoginForm
                            navigate={this.props.navigation}
                            />
                         </View>
