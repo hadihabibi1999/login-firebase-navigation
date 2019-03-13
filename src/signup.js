@@ -4,6 +4,10 @@ import React, { Component } from "react";
 
 
 export default class Signup extends Component {
+    static navigationOptions = {
+        header: null,
+        };
+    
     constructor(props){
         super(props);
         this.state={
@@ -25,34 +29,61 @@ export default class Signup extends Component {
   }
 
      goesToLogin(){
-        this.props.navigation.navigate('Login')
-}
+       this.props.navigation.navigate('Login')
+     }
+
      createdUser(){
        this.createUser()
        this.goesToLogin()
-  }
+     }
 
 
 render() {
   
     return (
-        <View style={{flex:1,backgroundColor:"#DADDE6"}}>
+        <ImageBackground source={require('.././assets/backImage.jpg')} style={{width: '100%', height: '100%'}}>  
+
+        <KeyboardAvoidingView behavior="padding" enabled>
+      
+
+        <View behavior='padding' style={{ flex: 1, flexDirection: "column",padding:20}}>
+        
          <StatusBar
             barStyle="light-content"
         />
-        <KeyboardAvoidingView behavior="padding" enabled>
-          
-        <View behavior='padding' style={{ flex: 1, flexDirection: "column",padding:20}}>
-        <StatusBar
-            barStyle="light-content"
-        />
+       
+    
+        <View style={{flex:1,backgroundColor:"#DADDE6"}}>
+      
+        <View style={{marginTop:335}}>
 
-      <View style={{marginTop:50}}>
+        <View style={{flexDirection:'row',marginTop:-70,justifyContent:'space-between'}}>
+            <View style={{flex:1}}>
+                <TextInput
+                style={styles.input3}
+                placeholder="First name"
+                placeholderTextColor='#0767FA'
+                />
+            </View>
+            <View>
+                <Text>  </Text>
+            </View>
+            <View style={{flex:1}}>
+                 <TextInput
+                 style={styles.input4}
+                 placeholder="Last name"
+                 placeholderTextColor='#0767FA'
+                />
+            </View>
+        
+        </View>
+       
+       </View>
             <TextInput
                 style={styles.input1}
                 placeholder="Email address"
                 underlineColorAndroid="transparent"
-                placeholderTextColor='white'
+                placeholderTextColor='#0767FA'
                 returnKeyType='next'
                 onSubmitEditing={()=>this.passwordTextInput.focus()}
                 keyboardType="email-address"
@@ -69,43 +100,65 @@ render() {
                 placeholder="Password"
                 secureTextEntry={true}
                 underlineColorAndroid="transparent"
-                placeholderTextColor='white'
+                placeholderTextColor='#0767FA'
                 returnKeyType='go'
                 ref={(input)=>this.passwordTextInput=input}
                 value={this.state.password}
                 onChangeText={(password)=> this.setState({password})}
-            />
-                 </View>
-                 </View>
+                 />
+             </View>
+         </View>
 
-            <View style={{ height: 100, marginTop: 200 }}>
+            <View style={{ height: 100, marginTop: 500 }}>
                 <TouchableOpacity onPress={()=>this.createdUser()}>
-                    <Text style={{textAlign:'center',color:'steelblue',fontSize:25}}>Sign Up</Text>
+                    <Text style={{textAlign:'center',color:'#FEFDFD',fontSize:25}}>Sign Up</Text>
                 </TouchableOpacity>
             </View>
+          
+      </View>
 
-        </View>
-        
-       </KeyboardAvoidingView>
-       </View>
+            </KeyboardAvoidingView>
+      </ImageBackground>
+    
+    
     );
   }
 }
 const styles = StyleSheet.create({
    input1:{
        height: 45,
-       borderColor: "#0B52F6",
+       borderColor:"7777F9",
        borderWidth: 0.5,
        paddingHorizontal:10,
        borderRadius:30,
-       backgroundColor:"#8D8E92"
+       backgroundColor:"#FFF2F0"
    },
     input2:{
         height: 45,
-        borderColor: "#0B52F6",
+        borderColor: "#7777F9",
         borderWidth: 0.5,
         paddingHorizontal:10,
         borderRadius:30,
-        backgroundColor:"#8D8E92"
-    }
-})
+        backgroundColor:"#FFF2F0"
+    },
+    input3:{
+        height: 45,
+        borderColor: "#7777F9",
+        borderWidth: 0.5,
+        paddingHorizontal:10,
+        borderRadius:30,
+        backgroundColor:"#FFF2F0",
+        justifyContent:'flex-start',
+       
+    },
+    input4:{
+        height: 45,
+        borderColor: "#7777F9",
+        borderWidth: 0.5,
+        paddingHorizontal:10,
+        borderRadius:30,
+        backgroundColor:"#FFF2F0",
+        justifyContent:'flex-end',
+       
+    },
+    });

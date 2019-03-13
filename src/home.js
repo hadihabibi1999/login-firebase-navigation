@@ -4,12 +4,15 @@ import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
 
 class Feed extends React.Component {
+  
 constructor(){
     super();
     this.state={
         text:'see your information'
     }
 }
+
+
 
 changedText=()=>{
     this.setState({text:`${this.state.email}`})
@@ -24,6 +27,7 @@ changedText=()=>{
 }
 
 class Profile extends React.Component {
+    
   render() {
     return (
       <View style={styles.view}>

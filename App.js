@@ -35,10 +35,11 @@ import Home from './src/home';
                                    <Text style={{color:'#922B21',textAlign:'center',fontSize:15}}>Don't have an account? </Text> 
                           
                                    <Button
-                                         title="Sign Up"
-                                         type='clear'
-                                         onPress={() => this.props.navigation.navigate('Signup')}
-                                   />
+                            title="Sign Up"
+                            type='clear'
+                            onPress={() => this.props.navigation.navigate('Signup')}
+                            />
+                                   
                           </View>
                </ImageBackground>
            </KeyboardAvoidingView>

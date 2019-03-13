@@ -72,7 +72,7 @@ render() {
 
                  <TouchableOpacity style={{ height: 100, marginTop: 90 }}
                       onPress={()=>this.arrivalledUser()}>
-                      <Text style={{textAlign:'center',color:'steelblue',fontSize:25}}>Log In</Text>
+                      <Text style={{textAlign:'center',color:'#FEFDFD',fontSize:25}}>Log In</Text>
                 </TouchableOpacity>
      
         </View>
