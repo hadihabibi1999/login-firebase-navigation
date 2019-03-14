@@ -12,7 +12,9 @@ export default class Signup extends Component {
         super(props);
         this.state={
             email:"",
-            password:""
+            password:"",
+            name:"",
+            lastname:""
         }
     }
     
@@ -63,6 +65,7 @@ render() {
                 style={styles.input3}
                 placeholder="First name"
                 placeholderTextColor='#0767FA'
+                onChangeText={(name)=> this.setState({name})}
                 />
             </View>
             <View>
@@ -73,6 +76,7 @@ render() {
                  style={styles.input4}
                  placeholder="Last name"
                  placeholderTextColor='#0767FA'
+                 onChangeText={(lastname)=> this.setState({lastname})}
                 />
             </View>
         
