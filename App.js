@@ -4,6 +4,7 @@ import {StyleSheet,Button, View, Text ,Image,ImageBackground,TouchableOpacity,Ke
 import Signup from './src/signup';
 import LoginForm from './src/login';
 import Home from './src/home';
+import Gallery from './src/gallery';
 
 
  class Login extends React.Component {
@@ -37,7 +38,7 @@ import Home from './src/home';
                                    <Button
                             title="Sign Up"
                             type='clear'
-                            onPress={() => this.props.navigation.navigate('Signup')}
+                            onPress={() => this.props.navigation.navigate('Gallery')}
                             />
                                    
                           </View>
@@ -57,6 +58,9 @@ const RootStack = createStackNavigator(
     },
     Home:{
       screen: Home,
+    },
+    Gallery:{
+      screen: Gallery,
     }
   },
   {

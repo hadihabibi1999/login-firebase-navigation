@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TouchableOpacity,Text, Button,View, TextInput, KeyboardAvoidingView ,StatusBar,StyleSheet} from "react-native";
+import { TouchableOpacity,Text, Button ,View, TextInput,  KeyboardAvoidingView ,StatusBar,StyleSheet} from "react-native";
 import fire from "./firebase";
  
 
@@ -28,7 +28,7 @@ export default class LoginForm extends Component {
   
    
       arrivalledUser(){
-          //this.loginUser()
+          this.loginUser()
           this.goesToHome()
       }
 
@@ -36,7 +36,8 @@ export default class LoginForm extends Component {
 render() {
    
     return (
-        <View behavior='padding' style={{ flex: 1, flexDirection: "column", margin: 10 }}>
+        <View behavior='padding' style={{ flex: 1, flexDirection: "column", margin: 10 }}> 
+        
         <StatusBar
             barStyle="light-content"
         />
@@ -73,8 +74,9 @@ render() {
                  <TouchableOpacity style={{ height: 100, marginTop: 90 }}
                       onPress={()=>this.arrivalledUser()}>
                       <Text style={{textAlign:'center',color:'#FEFDFD',fontSize:25}}>Log In</Text>
-                </TouchableOpacity>
+                 </TouchableOpacity>
      
+                
         </View>
       
     );

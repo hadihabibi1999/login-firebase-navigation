@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet,Text, Image ,View } from 'react-native';
-import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
+import { StyleSheet,Text, Image,Button ,ScrollView,View } from 'react-native';
+import { createBottomTabNavigator, createAppContainer} from 'react-navigation';
 import { GiftedChat } from "react-native-gifted-chat";
 import { ChatManager, TokenProvider } from '@pusher/chatkit-client';
 
@@ -21,9 +21,11 @@ changedText=()=>{
 
   render() {
     return (
-      <View style={styles.view}>
-        <Text onPress={this.changedText}>{this.state.text}</Text>
-      </View>
+  
+          <View style={styles.view}>
+             <Text onPress={this.changedText}>{this.state.text}</Text>
+           </View>
+  
     );
   }
 }
@@ -137,3 +139,4 @@ const styles = StyleSheet.create({
       backgroundColor:"skyblue"
     }
 })
+
