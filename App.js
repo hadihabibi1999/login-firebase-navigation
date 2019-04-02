@@ -38,7 +38,7 @@ import Gallery from './src/gallery';
                                    <Button
                             title="Sign Up"
                             type='clear'
-                            onPress={() => this.props.navigation.navigate('Gallery')}
+                            onPress={() => this.props.navigation.navigate('Signup')}
                             />
                                    
                           </View>

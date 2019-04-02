@@ -1,9 +1,22 @@
 import React from 'react';
-import { StyleSheet,Text, Image,Button ,ScrollView,View } from 'react-native';
+import { StyleSheet,Text, Image,Button ,View } from 'react-native';
 import { createBottomTabNavigator, createAppContainer} from 'react-navigation';
 import { GiftedChat } from "react-native-gifted-chat";
 import { ChatManager, TokenProvider } from '@pusher/chatkit-client';
+import Pusher from 'pusher-js/react-native';
 
+// Enable pusher logging - don't include this in production
+Pusher.logToConsole = true;
+
+var pusher = new Pusher('e36da3c62655f8557b56', {
+  cluster: 'ap2',
+  forceTLS: true
+});
+
+var channel = pusher.subscribe('my-channel');
+channel.bind('my-event', function(data) {
+  alert(JSON.stringify(data));
+});
 
 
 class Feed extends React.Component {
@@ -21,10 +34,19 @@ changedText=()=>{
 
   render() {
     return (
-  
-          <View style={styles.view}>
-             <Text onPress={this.changedText}>{this.state.text}</Text>
-           </View>
+  <View style={styles.view}>
+       <View style={{marginBottom:100}}>
+            <Text style={{color:'steelblue',fontSize:17}} onPress={this.changedText}>{this.state.text}</Text>
+       </View>
+       <View>
+              <Button
+                 style={{marginTop:30}}
+                  title="Going to Gallery"
+                  type='clear'
+                  onPress={() => this.props.navigation.navigate('Gallery')}
+               />
+         </View>
+  </View>
   
     );
   }
@@ -132,7 +154,7 @@ export default createAppContainer(TabNavigator);
 const styles = StyleSheet.create({
     view:{
         flex: 1,
-         justifyContent: 'center',
+          justifyContent: 'center',
           alignItems: 'center' 
     },
     chat:{
