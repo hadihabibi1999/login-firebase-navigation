@@ -11,6 +11,7 @@
     "bootstrap": "^4.3.1",
     "expo": "^32.0.0",
     "firebase": "^5.8.4",
+    "pusher-js": "^4.4.0",
     "react": "^16.5.0",
     "react-bootstrap": "^1.0.0-beta.5",
     "react-dom": "^16.8.3",
