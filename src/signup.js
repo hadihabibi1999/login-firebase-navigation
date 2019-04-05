@@ -1,12 +1,12 @@
 import React, { Component } from "react";
  import { TouchableOpacity,Text,ImageBackground , View, Button, TextInput, KeyboardAvoidingView ,StatusBar,StyleSheet} from "react-native";
  import fire from "./firebase";
-
+ 
 
 export default class Signup extends Component {
     static navigationOptions = {
-        header: null,
-        };
+        header:null
+      }
     
     constructor(props){
         super(props);
