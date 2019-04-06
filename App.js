@@ -4,7 +4,7 @@ import {StyleSheet,Button, View, Text ,Image,ImageBackground,TouchableOpacity,Ke
 import Signup from './src/signup';
 import LoginForm from './src/login';
 import Home from './src/home';
-import Gallery from './src/gallery';
+import Main from './src/main';
 
 
  class Login extends React.Component {
@@ -12,9 +12,10 @@ import Gallery from './src/gallery';
     header: null,
     };
 
-  
+
 
   render() {
+    let navigate = ()=>{this.props.navigation};
     return (
           <KeyboardAvoidingView behavior="padding" enabled>
                <ImageBackground source={require('./assets/instagram-background.jpg')} style={{width: '100%', height: '100%'}}>  
@@ -59,8 +60,8 @@ const RootStack = createStackNavigator(
     Home:{
       screen: Home,
     },
-    Gallery:{
-      screen: Gallery,
+    Main:{
+      screen: Main,
     }
   },
   {

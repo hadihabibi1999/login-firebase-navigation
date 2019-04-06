@@ -23,7 +23,7 @@ export default class LoginForm extends Component {
     }
   
      goesToHome(){
-        {this.props.navigate.navigate('Home')}
+        {this.props.navigate.navigate('Main')}
       }
   
    

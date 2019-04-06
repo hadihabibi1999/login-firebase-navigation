@@ -7,9 +7,7 @@ import { ChatManager, TokenProvider } from '@pusher/chatkit-client';
 
 class Feed extends React.Component {
   
-  static navigationOptions = {
-     header:null
-  }
+ 
 
 constructor(){
     super();
@@ -45,7 +43,7 @@ const CHATKIT_ROOM_ID = '20145924';
 const CHATKIT_USER_NAME = 'hadicyb';
 
 class Chat extends React.Component {
-    
+
   state = {
     messages: [],
   }
@@ -142,7 +140,5 @@ const styles = StyleSheet.create({
          justifyContent: 'center',
           alignItems: 'center' 
     },
-    chat:{
-      backgroundColor:"skyblue"
-    }
+  
 })
