@@ -15,7 +15,7 @@ import Main from './src/main';
 
 
   render() {
-    let navigate = ()=>{this.props.navigation};
+      <Main navigate={this.props.navigation}/>
     return (
           <KeyboardAvoidingView behavior="padding" enabled>
                <ImageBackground source={require('./assets/instagram-background.jpg')} style={{width: '100%', height: '100%'}}>  

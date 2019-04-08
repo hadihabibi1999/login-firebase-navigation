@@ -3,9 +3,12 @@ import {StyleSheet,TouchableHighlight  ,Button, View ,ScrollView, Text ,Image} f
 import {Icon} from 'native-base';
 
 export default class Main extends Component {
+    goToHome() {
+        this.props.navigate.navigate('Home')
+    }
     static navigationOptions = {
         headerLeft:
-        <TouchableHighlight onPress={()=>{this.props.navigation.navigate('Home')}}>
+        <TouchableHighlight onPress={this.goToHome}>
          <Icon 
          style={{padding:10}}
          name="ios-camera"
@@ -13,14 +16,17 @@ export default class Main extends Component {
          </TouchableHighlight>,
          title:'Instagram',
          headerRight: 
-         <TouchableHighlight onPress={()=>{this.props.navigation.navigate('Home')}}>
+         <TouchableHighlight onPress={this.goToHome}>
          <Icon 
          style={{padding:10}}
          name="ios-send"
          />
          </TouchableHighlight>
-      }
+      };
+      
     render() { 
+     
+      
         return ( 
             
          <View>
