@@ -8,7 +8,6 @@ import { ChatManager, TokenProvider } from '@pusher/chatkit-client';
 class Feed extends React.Component {
   
  
-
 constructor(){
     super();
     this.state={

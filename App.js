@@ -12,10 +12,8 @@ import Main from './src/main';
     header: null,
     };
 
-
-
   render() {
-      <Main navigate={this.props.navigation}/>
+      
     return (
           <KeyboardAvoidingView behavior="padding" enabled>
                <ImageBackground source={require('./assets/instagram-background.jpg')} style={{width: '100%', height: '100%'}}>  
@@ -41,10 +39,12 @@ import Main from './src/main';
                             type='clear'
                             onPress={() => this.props.navigation.navigate('Signup')}
                             />
-                                   
+                               
                           </View>
+                       
                </ImageBackground>
            </KeyboardAvoidingView>
+          
     );
   }
 }
