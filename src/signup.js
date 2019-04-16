@@ -131,7 +131,7 @@ render() {
 const styles = StyleSheet.create({
    input1:{
        height: 45,
-       borderColor:"7777F9",
+       borderColor:"#7777F9",
        borderWidth: 0.5,
        paddingHorizontal:10,
        borderRadius:30,
