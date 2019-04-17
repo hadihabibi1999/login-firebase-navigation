@@ -3,7 +3,7 @@ import { createAppContainer, createStackNavigator } from 'react-navigation';
 import {StyleSheet,Button, View, Text ,Image,ImageBackground,TouchableOpacity,KeyboardAvoidingView} from 'react-native';
 import Signup from './src/signup';
 import LoginForm from './src/login';
-import Home from './src/home';
+import Chat from './src/direct';
 import Main from './src/main';
 
 
@@ -57,8 +57,8 @@ const RootStack = createStackNavigator(
     Signup: {
       screen: Signup,
     },
-    Home:{
-      screen: Home,
+    Chat:{
+      screen: Chat,
     },
     Main:{
       screen: Main,

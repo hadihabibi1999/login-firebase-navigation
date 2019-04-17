@@ -1,4 +1,6 @@
-// const store = {
+
+
+// const store = {  
 //     name: 'hadi',
 //     properties: {
 //         hobby: 'programming',

@@ -23,14 +23,14 @@ export default class LoginForm extends Component {
           // ...
     }
   
-     goesToHome(){
+     goesToMain(){
         {this.props.navigate.navigate('Main')}
       }
   
    
       arrivalledUser(){
-          this.loginUser()
-          this.goesToHome()
+       //   this.loginUser()
+          this.goesToMain()
       }
 
       
