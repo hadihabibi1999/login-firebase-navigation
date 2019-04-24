@@ -42,7 +42,7 @@ const reducers = combineReducers({
 
 const store = createStore(reducers);
 
-function action(girl) {
+function action (girl) {
     return {
         type: 'NEW_GIRL_FRIEND', //required
         girl //optional

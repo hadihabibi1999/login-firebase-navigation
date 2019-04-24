@@ -21,7 +21,7 @@ import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
          }
        }
    static navigationOptions = ({ navigation }) => ({ 
-       title: 'Instagram',
+      title: 'Instagram',
        headerRight: <TouchableHighlight onPress = {() => navigation.navigate('Chat')} >
                         <Icon style = {{ padding: 10 }} name = "ios-send" />
                     </TouchableHighlight>,
@@ -50,6 +50,17 @@ const styles = StyleSheet.create({
     },
 })
 
+export default Main;
 
-  export default Main;
+
+
+/*
+const TabNavigator = createBottomTabNavigator({
+   Main:{
+       screen:Main
+   }
+});
+  
+  export default createAppContainer(TabNavigator);
+  */
   
